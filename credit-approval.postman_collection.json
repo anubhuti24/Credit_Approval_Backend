@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "e6f73cbe-a612-480d-b7e5-39530829d479",
+		"name": "credit-approval",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24975406"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Pia",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Singh",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "29",
+							"type": "text"
+						},
+						{
+							"key": "monthly_salary",
+							"value": "800",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "9999090976",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/register/",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check_eligibility",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer_id",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "loan_amount",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "interest_rate",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "tenure",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/check-eligibilty",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"check-eligibilty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_loan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer_id",
+							"value": "196",
+							"type": "text"
+						},
+						{
+							"key": "loan_amount",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "interest_rate",
+							"value": "16",
+							"type": "text"
+						},
+						{
+							"key": "tenure",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseurl}}/api/create-loan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"create-loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view_loan_details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/view-loans/200",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"view-loans",
+						"200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Injest Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/injest/",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"injest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view_details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/api/view-details/1390",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"api",
+						"view-details",
+						"1390"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
