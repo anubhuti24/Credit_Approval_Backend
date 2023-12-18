@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: ["./docker-entrypoint.sh"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "credit_approval"
+      POSTGRES_USER: "credit_approval_user"
+      POSTGRES_PASSWORD: "postgresql@2023"
+
+  celery:
+    build: .
+    command: ["celery", "-A", "credit_approval", "worker", "--loglevel=info"]
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+
+  redis:
+    image: "redis:latest"
